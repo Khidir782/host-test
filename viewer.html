@@ -28,26 +28,26 @@
         // Create a new report instance
         var report = new Stimulsoft.Report.StiReport();
 
-        // Load data
-        // fetch('data/demos.json')
-        //     .then(function (response) { return response.json(); })
-        //     .then(function (demos) {
-        //         var dataSet = new Stimulsoft.System.Data.DataSet("DemosDataSet");
-        //         dataSet.readJson({ Demos: demos });
-        //         report.regData("DemosDataSet", "DemosDataSet", dataSet);
+        Load data
+        fetch('data/demos.json')
+            .then(function (response) { return response.json(); })
+            .then(function (demos) {
+                var dataSet = new Stimulsoft.System.Data.DataSet("DemosDataSet");
+                dataSet.readJson({ Demos: demos });
+                report.regData("DemosDataSet", "DemosDataSet", dataSet);
 
-        //         viewer.report = report;
-        //         viewer.renderHtml("viewerContent");
-        //     })
-        //     .catch(function (err) {
-        //         console.error("Error loading data:", err);
-        //         // If running locally without server, provide specific advice
-        //         if (window.location.protocol === 'file:') {
-        //             alert("Error loading 'data/demos.json'. Browsers restrict Fetch API for local files. Please run this folder with a local server (e.g., Live Server in VS Code) or use Firefox.");
-        //         } else {
-        //             alert("Error loading data: " + err.message);
-        //         }
-        //     });
+                viewer.report = report;
+                viewer.renderHtml("viewerContent");
+            })
+            .catch(function (err) {
+                console.error("Error loading data:", err);
+                // If running locally without server, provide specific advice
+                if (window.location.protocol === 'file:') {
+                    alert("Error loading 'data/demos.json'. Browsers restrict Fetch API for local files. Please run this folder with a local server (e.g., Live Server in VS Code) or use Firefox.");
+                } else {
+                    alert("Error loading data: " + err.message);
+                }
+            });
     </script>
 </body>
 
