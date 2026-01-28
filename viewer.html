@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Stimulsoft Reports Viewer</title>
+    <link href="lib/Css/stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet">
+    <script src="lib/stimulsoft.reports.js"></script>
+    <script src="lib/stimulsoft.viewer.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="viewerContent"></div>
+    <script>
+        // Set options
+        var options = new Stimulsoft.Viewer.StiViewerOptions();
+        options.appearance.scrollbarsMode = true;
+
+        var viewer = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
+
+        // Create a new report instance
+        var report = new Stimulsoft.Report.StiReport();
+
+        // Load data
+        // fetch('data/demos.json')
+        //     .then(function (response) { return response.json(); })
+        //     .then(function (demos) {
+        //         var dataSet = new Stimulsoft.System.Data.DataSet("DemosDataSet");
+        //         dataSet.readJson({ Demos: demos });
+        //         report.regData("DemosDataSet", "DemosDataSet", dataSet);
+
+        //         viewer.report = report;
+        //         viewer.renderHtml("viewerContent");
+        //     })
+        //     .catch(function (err) {
+        //         console.error("Error loading data:", err);
+        //         // If running locally without server, provide specific advice
+        //         if (window.location.protocol === 'file:') {
+        //             alert("Error loading 'data/demos.json'. Browsers restrict Fetch API for local files. Please run this folder with a local server (e.g., Live Server in VS Code) or use Firefox.");
+        //         } else {
+        //             alert("Error loading data: " + err.message);
+        //         }
+        //     });
+    </script>
+</body>
+
+</html>
