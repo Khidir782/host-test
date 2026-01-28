@@ -28,25 +28,25 @@
 
         var report = new Stimulsoft.Report.StiReport();
 
-        // fetch('data/demos.json')
-        //     .then(function (response) { return response.json(); })
-        //     .then(function (demos) {
-        //         var dataSet = new Stimulsoft.System.Data.DataSet("DemosDataSet");
-        //         dataSet.readJson({ Demos: demos });
-        //         report.regData("DemosDataSet", "DemosDataSet", dataSet);
-        //         report.dictionary.synchronize();
+        fetch('data/demos.json')
+            .then(function (response) { return response.json(); })
+            .then(function (demos) {
+                var dataSet = new Stimulsoft.System.Data.DataSet("DemosDataSet");
+                dataSet.readJson({ Demos: demos });
+                report.regData("DemosDataSet", "DemosDataSet", dataSet);
+                report.dictionary.synchronize();
 
-        //         designer.report = report;
-        //         designer.renderHtml("designerContent");
-        //     })
-        //     .catch(function (err) {
-        //         console.error("Error loading data:", err);
-        //         if (window.location.protocol === 'file:') {
-        //             alert("Error loading 'data/demos.json'. Browsers restrict Fetch API for local files. Please run this folder with a local server (e.g., Live Server in VS Code) or use Firefox.");
-        //         } else {
-        //             alert("Error loading data: " + err.message);
-        //         }
-        //     });
+                designer.report = report;
+                designer.renderHtml("designerContent");
+            })
+            .catch(function (err) {
+                console.error("Error loading data:", err);
+                if (window.location.protocol === 'file:') {
+                    alert("Error loading 'data/demos.json'. Browsers restrict Fetch API for local files. Please run this folder with a local server (e.g., Live Server in VS Code) or use Firefox.");
+                } else {
+                    alert("Error loading data: " + err.message);
+                }
+            });
     </script>
 </body>
 
